@@ -29,6 +29,11 @@ namespace ConsoleApp2
 
             foreach (DataRow row in table.Rows)
             {
+                Console.WriteLine($"{row["Id"],-3} {row["Name"],-20} {row["Age"],-4} {row["GroupName"],-5}");
+            }
+
+            foreach (DataRow row in table.Rows)
+            {
                 int currentAge = (int)row["Age"];
                 if (currentAge > maxAge)
                 {
@@ -36,7 +41,7 @@ namespace ConsoleApp2
                     oldestRow = row;
                 }
             }
-            Console.WriteLine($"{oldestRow["Id"],-3} {oldestRow["Name"],-20} {oldestRow["Age"],-4} {oldestRow["GroupName"],-5}");
+            Console.WriteLine($"\n{oldestRow["Id"],-3} {oldestRow["Name"],-20} {oldestRow["Age"],-4} {oldestRow["GroupName"],-5}");
         }
     }
 }
